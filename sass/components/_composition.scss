@@ -1,0 +1,76 @@
+.composition {
+    position: relative;
+    .com-photo {
+        position: absolute;
+        width: 55%;
+        transition: all .2s;
+        
+        &-p1 {
+            top: -20px;
+            left: 0;
+
+            @include respond(tab-port) {
+                top: 10px;
+            }
+        }
+        &-p2 {
+            right: 0;
+            top: 20px;
+            @include respond(tab-port) {
+                top: 0;
+                right: 20px;
+                transform: scale(1.1);
+                -webkit-transform: scale(1.1);
+                -moz-transform: scale(1.1);
+                -ms-transform: scale(1.1);
+                -o-transform: scale(1.1);
+                z-index: 5;
+            }
+        }
+        &-p3 {
+            left: 20%;
+            top: 100px;
+            @include respond(tab-port) {
+                left: -30px;
+                top: 15px;
+                
+            }
+        }
+
+        @include respond(tab-port) {
+            width: 33.3333%;
+            position: relative;
+            float: left;
+        }
+        
+    &:hover {
+        z-index: 1;
+        transform: scale(1.1);
+        -webkit-transform: scale(1.1);
+        -moz-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        -o-transform: scale(1.1);
+        outline: 1.5rem solid $color-primary;
+        outline-offset: 1.5rem;
+        border-radius: 6px;
+        -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+        -ms-border-radius: 6px;
+        -o-border-radius: 6px;
+        box-shadow: 0 15px 40px rgba($color-black, .4);
+
+        @include respond(tab-port) {
+            outline: .8rem solid $color-primary;
+            outline-offset: 1rem;
+        }
+    }
+    }
+
+    &:hover :not(:hover) {
+        transform: scale(.95);
+        -webkit-transform: scale(.95);
+        -moz-transform: scale(.95);
+        -ms-transform: scale(.95);
+        -o-transform: scale(.95);
+    }
+}
